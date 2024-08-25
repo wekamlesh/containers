@@ -1,11 +1,8 @@
 # Use an official Portainer image from Docker Hub
 FROM portainer/portainer-ce:latest
 
-# Set the necessary environment variables
-ENV PORTAINER_PORT 9000
-
 # Expose the port that Portainer will use
-EXPOSE $PORTAINER_PORT
+EXPOSE 9000
 
 # Create a volume for persistent data
 VOLUME ["/data"]

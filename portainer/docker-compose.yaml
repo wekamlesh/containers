@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    ports:
+      - "9000:9000"  # Map the port for Portainer
+    volumes:
+      - portainer_data:/data  # Volume for persistent data
+      - /var/run/docker.sock:/var/run/docker.sock  # Docker socket for managing Docker
+    environment:
+      - PORTAINER_PORT=9000  # Define environment variables if needed
+    restart: unless-stopped  # Restart policy
+
+volumes:
+  portainer_data:
+    name: portainer_data  # Volume name for Portainer data
