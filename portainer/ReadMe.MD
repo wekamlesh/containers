@@ -13,6 +13,5 @@ podman run -d \
   -p 9000:9000 \
   -v portainer_data:/data \
   --name=portainer \
-  portainer
-
+  portainer-standalone
 ```
